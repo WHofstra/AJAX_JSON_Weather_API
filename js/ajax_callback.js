@@ -20,8 +20,12 @@ function makeAjaxCall(url, methodType){
         else
         {
           reject(xmlhttp);
-          console.log("Xmlhttp processing still going on.");
+          console.log("Xmlhttp failed.");
         }
+      }
+      else
+      {
+        console.log("Xmlhttp processing still going on.");
       }
     }
     console.log("Request sent succesfully.");
@@ -30,5 +34,5 @@ function makeAjaxCall(url, methodType){
 }
 
 function errorHandler(statusCode){
-  console.log("Failed with status ", status);
+  console.log("Failed with status", status);
 }
