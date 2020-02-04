@@ -1,38 +1,38 @@
 function makeAjaxCall(url, methodType){
   let promiseObj = new Promise(function(resolve, reject){
-    console.log(url);
+    //console.log(url);
 
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open(methodType, url, true);
     xmlhttp.send();
 
     xmlhttp.onreadystatechange = function(){
-      if (xmlhttp.readystate === 4)
+      if (xmlhttp.readyState === 4)
       {
         if (xmlhttp.status === 200)
         {
-          console.log("Xmlhttp done succesfully.");
+          //console.log("Xmlhttp done succesfully.");
 
           let serverResponse = xmlhttp.responseText; //Server antwoord met string
-          console.log(serverResponse);
+          //console.log(serverResponse);
           resolve(serverResponse); //Wordt via return promiseObj teruggegeven
         }
         else
         {
-          reject(xmlhttp);
-          console.log("Xmlhttp failed.");
+          reject(xmlhttp.status);
+          //console.log("Xmlhttp failed.");
         }
       }
       else
       {
-        console.log("Xmlhttp processing still going on.");
+        //console.log("Xmlhttp processing still going on.");
       }
     }
-    console.log("Request sent succesfully.");
+    //console.log("Request sent succesfully.");
   });
   return promiseObj;
 }
 
 function errorHandler(statusCode){
-  console.log("Failed with status", status);
+  //console.log("Failed with status", statusCode);
 }

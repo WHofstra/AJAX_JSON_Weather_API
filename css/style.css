@@ -1,0 +1,12 @@
+.Result {
+  border-radius: 5px;
+  background-color: #e2daf1;
+  color: #090a0d;
+  padding:  1em;
+  margin: .9em;
+  width: 70%;
+  border: 1px solid #e7e7e7;
+  padding: 2 2em;
+  margin: 2 2em;
+  position: relative;
+}
